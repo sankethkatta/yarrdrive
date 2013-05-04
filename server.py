@@ -10,9 +10,8 @@ def index():
 
 @post('/', template='upload')
 def upload():
-    redis.hmset(request.forms['uid'], {'uid': request.forms['uid'], 
-                                       'url': request.forms['url'],
-                                       'name': request.forms['name']})
+    redis.hmset(request.forms['uid'], dict(request.forms))
+    #from bpdb import set_trace; set_trace()
     return locals()
 
 
