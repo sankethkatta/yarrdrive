@@ -20,5 +20,14 @@ def serve_static(filename):
     return static_file(filename, root='./public')
 
 
+@error(404)
+@error(500)
+def servererror(error):
+    if error.exception:
+        print '\033[93m', error, '\033[0m'
+        return error.traceback.replace('\n', '<br>').replace(' ', '&nbsp;')
+    return 'error'
+
+
 port = sys.argv[1] if len(sys.argv) > 1 else 80
 run(port=port, debug=True, reloader=True)
