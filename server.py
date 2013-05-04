@@ -12,7 +12,7 @@ def index():
 def upload():
     redis.hmset(request.forms['uid'], {'uid': request.forms['uid'], 
                                        'url': request.forms['url'],
-                                       'name': request.forms['name']}
+                                       'name': request.forms['name']})
     return locals()
 
 
