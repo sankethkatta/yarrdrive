@@ -11,6 +11,7 @@ def index():
 
 @post('/', template='upload')
 def upload():
+    from bpdb import set_trace; set_trace()
     return locals()
 
 

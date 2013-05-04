@@ -27,7 +27,7 @@ function callback(data) {
       form.innerHTML += '<input type="hidden" name="url" value="'+video.url+'">';
       form.innerHTML += '<input type="hidden" name="raw_url" value="'+video.embedUrl+'">';
       form.innerHTML += '<input type="hidden" name="duration" value="'+video.duration+'">';
-      form.innerHTML += '<input type="hidden" name="thumbnail" value="'+video.thumbnails[2].url+'">';
+      //form.innerHTML += '<input type="hidden" name="thumbnail" value="'+video.thumbnails[2].url+'">';
       form.innerHTML += '<input type="hidden" name="name" value="'+video.name.match(/[\ \w]+/g).join('')+'">';
     }
     document.body.appendChild(form);
