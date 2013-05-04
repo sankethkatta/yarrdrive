@@ -1,0 +1,54 @@
+body {
+  color: white;
+  margin-top: 90px;
+  background: url('bg.jpg');
+} .navbar-inner .container {
+  width: 545px;
+} #upload {
+  cursor: pointer;
+} .text {
+  margin: 0 auto 40px auto;
+  max-width: 800px;
+  color: #c0c;
+  font-size: 26px;
+  line-height: 1em;
+} .font {
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  font-family: Georgia, Adobe Garamond Pro, serif;
+} #guide {
+  margin: 40px 0;
+  min-width: 600px;
+} #wrapper {
+  text-align: center;
+} .item {
+  float: left;
+  margin: 20px;
+  display: inline-block;
+} .item img {
+  border: 5px dotted #c0c;
+  width: 284px;
+  height: 400px;
+} button {
+  color: #9f9f9f;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  min-width: 150px;
+  background: #606;
+  text-shadow: 0 -1px rgba(0, 0, 0, .25);
+  border: 4px solid rgba(0, 0, 0, 0);
+} button:hover {
+  color: white;
+  border: 4px solid #c0c;
+} button:active {
+  background: #c0c;
+} .navbar-inverse .navbar-inner {
+  background-image: -moz-linear-gradient(top, #333, #111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#111));
+  background-image: -webkit-linear-gradient(top, #333, #111);
+  background-image: -o-linear-gradient(top, #333, #111);
+  background-image: linear-gradient(to bottom, #333, #111);
+}

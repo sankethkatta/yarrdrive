@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+sitemap: http://yarrdrive.com/sitemap.xml
+
