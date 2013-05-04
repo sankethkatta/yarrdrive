@@ -3,7 +3,6 @@ from bottle import *; TEMPLATE_PATH.append('templates')
 from redis import StrictRedis; redis = StrictRedis(db=1)
 import bottle; bottle.view = bottle.jinja2_view; bottle.template = bottle.jinja2_template
 
-
 @get('/', template='index')
 def index():
     return locals()
@@ -11,6 +10,9 @@ def index():
 
 @post('/', template='upload')
 def upload():
+    redis.hmset(request.forms['uid'], {'uid': request.forms['uid'], 
+                                       'url': request.forms['url'],
+                                       'name': request.forms['name']}
     return locals()
 
 
