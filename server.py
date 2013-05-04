@@ -1,28 +1,23 @@
-from bottle import *
+#!/usr/bin/python
+from bottle import *; TEMPLATE_PATH.append('templates')
+from redis import StrictRedis; redis = StrictRedis(db=1)
+import bottle; bottle.view = bottle.jinja2_view; bottle.template = bottle.jinja2_template
 
-# Home Page
-@get('/')
-def index():  
-    return template('index')
 
-# Static Routes
-@get('/<filename:re:.*\.js>')
-def javascripts(filename):
-    return static_file(filename, root='public/js')
+@get('/', template='index')
+def index():
+    return locals()
 
-@get('/<filename:re:.*\.css>')
-def stylesheets(filename):
-    return static_file(filename, root='public/css')
 
-@get('/<filename:re:.*\.(jpg|png|gif|ico)>')
-def images(filename):
-    return static_file(filename, root='public/img')
+@post('/', template='upload')
+def upload():
+    return locals()
 
-@get('/<filename:re:.*\.(eot|ttf|woff|svg)>')
-def fonts(filename):
-    return static_file(filename, root='public/fonts')
-  
-# Custom Template Path and Run Server with Debug on
-TEMPLATE_PATH.insert(0, "./templates/")
 
-run(host='localhost', port='8000', debug=True, reloader=True)
+@get('/<filename:re:.+\.[a-zA-Z0-9]{2,4}>')
+def serve_static(filename):
+    return static_file(filename, root='./public')
+
+
+port = sys.argv[1] if len(sys.argv) > 1 else 80
+run(port=port, debug=True, reloader=True)

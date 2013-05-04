@@ -14,6 +14,7 @@
   <body>
     <div class='navbar navbar-inverse navbar-fixed-top'>
       <div class='navbar-inner'>
+        <div id='top_border'></div>
         <div class='container'>
           <a class='brand font' href='/'>Yarr Drive</a>
           <ul class='nav'>
@@ -28,15 +29,22 @@
       </div>
     </div>
 
-    <div id='wrapper'>
-      {% for video in videos %}
-      <div class='item'>
-        <a target='_blank' href='{{ video.url }}'>
-          <img src='fightclub.jpg'>
-        </a>
+  <div id='wrapper'>
+    <div style='text-align: center'>
+      <div class='text'>
+        You MUST enable link sharing. Each video link is anonymous
       </div>
-      {% endfor %}
     </div>
+    <a href='/'>
+      <button> Back </button>
+    </a>
+    <a target='_blank' href='https://drive.google.com/#my-drive'>
+      <button> Google Drive </button>
+    </a>
+    <div>
+      <img id='guide' src='guide.png'>
+    </div>
+  </div>
 
   </body>
 </html>
