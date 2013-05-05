@@ -2,16 +2,15 @@
 from bottle import *; TEMPLATE_PATH.append('templates')
 from redis import StrictRedis; redis = StrictRedis(db=1)
 import bottle; bottle.view = bottle.jinja2_view; bottle.template = bottle.jinja2_template
+import requests
 
 @get('/', template='index')
 def index():
     return locals()
 
-
 @post('/', template='upload')
 def upload():
     redis.hmset(request.forms['uid'], dict(request.forms))
-    #from bpdb import set_trace; set_trace()
     return locals()
 
 
